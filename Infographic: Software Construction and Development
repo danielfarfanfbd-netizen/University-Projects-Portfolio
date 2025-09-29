@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Construcción y Desarrollo de Software</title>
+    <style>
+        :root {
+            --color-primary: #2c3e50;
+            --color-secondary: #3498db;
+            --color-accent: #e74c3c;
+            --color-light: #ecf0f1;
+            --color-dark: #34495e;
+            --color-success: #2ecc71;
+            --color-warning: #f39c12;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--color-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .infographic-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--color-secondary);
+        }
+        
+        h1 {
+            color: var(--color-primary);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--color-secondary);
+            margin: 25px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--color-light);
+        }
+        
+        h3 {
+            color: var(--color-dark);
+            margin: 20px 0 10px;
+        }
+        
+        .intro {
+            font-size: 1.1rem;
+            color: var(--color-dark);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            background: var(--color-light);
+        }
+        
+        .definition-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            flex: 1 1 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--color-secondary);
+        }
+        
+        .card h3 {
+            color: var(--color-primary);
+            margin-top: 0;
+        }
+        
+        .process-container {
+            position: relative;
+            margin: 40px 0;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .process-step {
+            flex: 1 1 200px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--color-secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .step-title {
+            color: var(--color-primary);
+            margin: 15px 0 10px;
+            font-weight: bold;
+        }
+        
+        .practices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .practice-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .practice-title {
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .icon {
+            margin-right: 10px;
+            color: var(--color-secondary);
+            font-size: 1.5rem;
+        }
+        
+        .solid-principles {
+            background: var(--color-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .principle {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 3px solid var(--color-success);
+        }
+        
+        .conclusion {
+            background: var(--color-primary);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .definition-cards, .process-steps, .practices-grid {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="infographic-container">
+        <header>
+            <h1>Construcción y Desarrollo de Software</h1>
+            <p class="intro">Términos que a menudo se utilizan indistintamente, pero con enfoques y alcances distintos</p>
+        </header>
+        
+        <section>
+            <h2>Definiciones de Desarrollo de Software</h2>
+            <div class="definition-cards">
+                <div class="card">
+                    <h3>Proceso Integral</h3>
+                    <p>Proceso de creación de un programa de software, abarcando todas las etapas del ciclo de vida del desarrollo de sistemas.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Concepción y Mantenimiento</h3>
+                    <p>Proceso de concepción, diseño, programación y mantenimiento de aplicaciones y sistemas informáticos.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Soluciones a Medida</h3>
+                    <p>Creación de soluciones informáticas personalizadas que se adaptan específicamente a los requisitos de una empresa.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Traducción de Necesidades</h3>
+                    <p>Proceso donde las necesidades del usuario se traducen en requerimientos de software que se implementan en código.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Etapas del Proceso de Desarrollo</h2>
+            <div class="process-container">
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Definición Inicial</div>
+                        <p>Establecer objetivos, alcance del proyecto, acuerdos básicos y presupuesto preliminar.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Análisis de Requerimientos</div>
+                        <p>Recopilar, examinar y obtener todos los requisitos del cliente, identificando restricciones.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Diseño</div>
+                        <p>Planteamiento de la solución informática: arquitectura, estructuras de datos, interfaces y componentes.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Codificación/Desarrollo</div>
+                        <p>Escribir código según especificaciones del diseño, siguiendo buenas prácticas de programación.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <div class="step-title">Pruebas</div>
+                        <p>Revisar el software para detectar errores o defectos, asegurando que cumpla los objetivos.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <div class="step-title">Implementación</div>
+                        <p>Instalar el software en el entorno del usuario, capacitar usuarios y asegurar operatividad.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">7</div>
+                        <div class="step-title">Mantenimiento/Evolución</div>
+                        <p>Manejar problemas, implementar cambios, corregir errores y añadir nuevas funcionalidades.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Buenas Prácticas y Calidad</h2>
+            <div class="practices-grid">
+                <div class="practice-item">
+                    <h3 class="practice-title">
+                        <span class="icon">✓</span>
+                        Código Limpio
+                    </h3>
+                    <p>Debe ser legible y bien estructurado para facilitar su reutilización y depuración.</p>
+                </div>
+                
+                <div class="practice-item">
+                    <h3 class="practice-title">
+                        <span class="icon">✓</span>
+                        Arquitectura
+                    </h3>
+                    <p>Indispensable para analizar, diseñar y definir el estilo arquitectónico que cubra necesidades funcionales y no funcionales.</p>
+                </div>
+                
+                <div class="practice-item">
+                    <h3 class="practice-title">
+                        <span class="icon">✓</span>
+                        Patrones de Diseño
+                    </h3>
+                    <p>Soluciones probadas a problemas de diseño comunes, reutilizables en diferentes contextos.</p>
+                </div>
+                
+                <div class="practice-item">
+                    <h3 class="practice-title">
+                        <span class="icon">✓</span>
+                        Programación Extrema (XP)
+                    </h3>
+                    <p>Enfatiza simplicidad, comunicación, retroalimentación, coraje y respeto. Incluye prácticas como planificación incremental, releases pequeños, diseño simple, TDD, refactorización, programación en pares, propiedad colectiva e integración continua.</p>
+                </div>
+            </div>
+            
+            <div class="solid-principles">
+                <h3>Principios SOLID</h3>
+                <div class="principle">
+                    <h4>Responsabilidad Única</h4>
+                    <p>Una clase debe tener una sola razón para cambiar.</p>
+                </div>
+                <div class="principle">
+                    <h4>Abierto/Cerrado</h4>
+                    <p>Las entidades de software deben estar abiertas para extensión pero cerradas para modificación.</p>
+                </div>
+                <div class="principle">
+                    <h4>Sustitución de Liskov</h4>
+                    <p>Los objetos de un programa deberían ser reemplazables por instancias de sus subtipos sin alterar el correcto funcionamiento del programa.</p>
+                </div>
+                <div class="principle">
+                    <h4>Segregación de Interfaz</h4>
+                    <p>Muchas interfaces específicas son mejores que una interfaz de propósito general.</p>
+                </div>
+                <div class="principle">
+                    <h4>Inversión de Dependencia</h4>
+                    <p>Depender de abstracciones, no de implementaciones concretas.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="conclusion">
+            <h2>En Resumen</h2>
+            <p>La construcción o desarrollo de software es un proceso integral que abarca desde la conceptualización y planificación hasta el mantenimiento continuo, requiriendo un enfoque disciplinado y la aplicación de buenas prácticas y principios de ingeniería para asegurar la calidad y adaptabilidad del producto final.</p>
+        </div>
+    </div>
+</body>
+</html>
